@@ -17,10 +17,5 @@ jobs:
     - name: Select Xcode Version
       run: sudo xcode-select -s /Applications/Xcode.app
 
-    - name: Install Dependencies
-      run: |
-        gem install cocoapods
-        pod install || true  # Если у тебя есть Podfile
-
     - name: Build App
-      run: xcodebuild clean build -project CI_CD_TestApp.xcodeproj -scheme CI_CD_TestApp -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest'
+      run: xcodebuild clean build -project CombineProject.xcodeproj -scheme CombineProject -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 14,OS=latest'
